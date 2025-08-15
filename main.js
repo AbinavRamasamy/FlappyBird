@@ -2,7 +2,7 @@ let bird, pipeUpMain, pipeDownMain, pipeUpBody1, pipeDownBody1, pipeUpBody2, pip
 let birdImg, pipeUpImg, pipeDownImg, pipeUpBodyImg, pipeDownBodyImg;
 let timesPassed = 0, diff = 2, init = false, isGameOver = false, dist = 190;
 
-
+//preloading the images
 function preload() {
     console.log("Preload started");
 
@@ -19,6 +19,7 @@ function preload() {
     console.log("Preload complete");
 }
 
+//linking the images to sprites
 function setup() {
     console.log("Setup started");
     createCanvas(750, 750);
@@ -55,6 +56,7 @@ function setup() {
 function draw() {
     background("skyblue");
 
+    //based on pressing up arrow
     if (kb.presses("ArrowUp")) {
         init = true;
         bird.vel.y = 0;
@@ -68,9 +70,11 @@ function draw() {
         pipeDownBody2.vel.x = -diff;
     }
 
+    //After first press
     if (init)
         bird.vel.y += 2/5;
 
+    //increase difficulty
     if (timesPassed % 2 == 1) {
         diff += 1;
         timesPassed += 1;
@@ -103,6 +107,7 @@ function draw() {
         (bird.collides(pipeUpBody1) || bird.collides(pipeDownBody1)) || 
         (bird.collides(pipeUpBody2) || bird.collides(pipeDownBody2)) || 
         (bird.y > 725)) {
+        //Game Over
         noLoop();
         textSize(64);
         fill("red");
