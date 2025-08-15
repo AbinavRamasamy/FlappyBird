@@ -1,4 +1,4 @@
-# FlappyBird ![FlappyBird Bird Image](images/flappybird_Bird.png)
+# FlappyBird <img src="images/flappybird_Bird.png" alt="FlappyBird Bird Image" height="40">
 
 This project is an experimental game where I explore various game mechanics, especially collision detection and game logic. The goal is to experiment and understand how different elements interact within a simple game environment.
 
